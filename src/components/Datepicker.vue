@@ -353,6 +353,7 @@ export default {
       if (!this.isInline) {
         this.close(true)
       }
+      this.$emit('input', date);
       this.resetTypedDate = new Date()
     },
     /**
