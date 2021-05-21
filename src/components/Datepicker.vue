@@ -259,7 +259,8 @@ export default {
      * Sets the initial picker page view: day, month or year
      */
     setInitialView () {
-      const initialView = this.computedInitialView
+      // if undefied default it to day
+      const initialView = this.computedInitialView ? this.computedInitialView : 'day';
       if (!this.allowedToShowView(initialView)) {
         throw new Error(`initialView '${this.initialView}' cannot be rendered based on minimum '${this.minimumView}' and maximum '${this.maximumView}'`)
       }
